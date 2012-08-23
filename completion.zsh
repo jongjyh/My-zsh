@@ -7,7 +7,7 @@
 <<<<<<< HEAD
 # add an autoload function path, if directory exists
 # http://www.zsh.org/mla/users/2002/msg00232.html
-functionsd="$HOME/.zsh/functions.d"
+functionsd="$ZSH_CONFIG/functions.d"
 if [[ -d "$functionsd" ]] {
     fpath=( $functionsd $fpath )
     autoload -U $functionsd/*(:t)
@@ -68,7 +68,7 @@ zstyle ':completion:*' matcher-list 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # caching of completion stuff
 zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "${HOME}/.zsh/${HOST}-cache"
+zstyle ':completion:*' cache-path "$ZSH_CACHE"
 
 
 # ~dirs: reorder output sorting: named dirs over userdirs
