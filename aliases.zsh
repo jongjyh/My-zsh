@@ -38,7 +38,7 @@ alias sign='gpg --detach-sign --armor'
 alias SimpleServer='open http://localhost:8000; python -m SimpleHTTPServer'
 
 ##### standard aliases (start with a space to be ignored in history)
-alias ls=' exa --group-directories-first'
+alias ls=' exa --group-directories-first --long'
 alias v="clear; exa --git -h -l --group-directories-first --time-style long-iso --color automatic"
 
 
@@ -177,4 +177,14 @@ alias -s tjp="tj3"
 alias -s asc="gpg"
 alias -s pem="openssl x509 -noout -text -in "
 alias sourcetree='open -a SourceTree'
+alias ll="ls -l"
+alias la="ls -a"
+alias dsp="cd ~/OneDrive"
+alias dwn="cd ~/Downloads"
+alias top="glances"
+alias df='duf'
+alias safari="open /Applications/Safari.app"
+alias ps="procs"
+alias du="dust"
+alias chrome="open /Applications/Google\ Chrome.app"
 
