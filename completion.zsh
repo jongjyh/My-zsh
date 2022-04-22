@@ -4,6 +4,7 @@
 # tab completion configuration
 #
 
+<<<<<<< HEAD
 # add an autoload function path, if directory exists
 # http://www.zsh.org/mla/users/2002/msg00232.html
 functionsd="$HOME/.zsh/functions.d"
@@ -11,6 +12,10 @@ if [[ -d "$functionsd" ]] {
     fpath=( $functionsd $fpath )
     autoload -U $functionsd/*(:t)
 }
+=======
+fpath=( ~/.zsh/functions.d/ $fpath )
+autoload -U ~/.zsh/functions.d/*(:t)
+>>>>>>> a0880d3 (Added support for auto completion, initialize functions.d on make install, copy _j from autojump)
 
 # load completions system
 zmodload -i zsh/complist
