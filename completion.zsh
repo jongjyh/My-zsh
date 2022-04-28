@@ -4,7 +4,6 @@
 # tab completion configuration
 #
 
-<<<<<<< HEAD
 # add an autoload function path, if directory exists
 # http://www.zsh.org/mla/users/2002/msg00232.html
 functionsd="$ZSH_CONFIG/functions.d"
@@ -12,10 +11,6 @@ if [[ -d "$functionsd" ]] {
     fpath=( $functionsd $fpath )
     autoload -U $functionsd/*(:t)
 }
-=======
-fpath=( ~/.zsh/functions.d/ $fpath )
-autoload -U ~/.zsh/functions.d/*(:t)
->>>>>>> a0880d3 (Added support for auto completion, initialize functions.d on make install, copy _j from autojump)
 
 # load completions system
 zmodload -i zsh/complist
@@ -24,8 +19,9 @@ zmodload -i zsh/complist
 # http://www.zsh.org/mla/users/2011/msg00531.html
 zstyle ':completion:*' rehash true
 
+
 # for all completions: menuselection
-zstyle ':completion:*' menu select=1
+zstyle ':completion:*' menu select
 
 # for all completions: grouping the output
 zstyle ':completion:*' group-name ''
@@ -52,7 +48,8 @@ zstyle ":completion:*" matcher-list 'm:{A-Zöäüa-zÖÄÜ}={a-zÖÄÜA-Zöäü}
 zstyle ':completion:*:messages' format $'\e[01;35m -- %d -- \e[00;00m'
 zstyle ':completion:*:warnings' format $'\e[01;31m -- No Matches Found -- \e[00;00m'
 zstyle ':completion:*:descriptions' format $'\e[01;33m -- %d -- \e[00;00m'
-zstyle ':completion:*:corrections' format $'\e[01;33m -- %d -- \e[00;00m'
+# https://thevaluable.dev/zsh-completion-guide-examples/
+zstyle ':completion:*:*:*:*:corrections' format '%F{yellow}!- %d (errors: %e) -!%f'
 
 # statusline for many hits
 zstyle ':completion:*:default' select-prompt $'\e[01;35m -- Match %M    %P -- \e[00;00m'
